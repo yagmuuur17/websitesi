@@ -1,0 +1,173 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: "Sigmar","Playwrite Italia Moderna",Arial, Helvetica, sans-serif;
+    padding: 10px;
+    background: #105057;
+}
+/* en üstte bulunan başlığı şekillendiriyoruz*/
+header{
+    padding: 30px;
+    text-align: center;
+    background: #898C8B;
+    
+}
+header h1{
+    font-size: 50px;
+}
+nav{
+    overflow: hidden;
+    background-color: #105057;
+}
+nav a{
+    float: left; /*sola yaslama*/
+    display: block;/* */
+    color: #f2f2f2;/*yazı renk*/
+    text-align: center;/*yazıyı merkeze alıyor*/
+    padding: 14px 16px;/*iç boşluk */
+    text-decoration: none;/*biçimlendirmeyi temizler*/
+}
+nav a:hover{
+    background-color: #FF81D0;/*yazı rengi*/
+    color: black;/*arkaplan rengi*/
+}
+/*left column - sol sütun*/
+.leftcolumn{
+    float: left;
+    width: 75%;
+}
+/*right column - sağ sütun*/
+.rightcolumn{
+    float: left;
+    width: 25%;
+    background-color: #105057;
+    padding-left: 20px;
+
+}
+.resim{
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+.card{
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+.row::after{/*.row elamanının sonuna görünmez bir içerik ekler psedo*/
+    content: ""; /* boş bir içerik ekler*/
+    display: table; /* tarayıcının blok elemanı gibi algılanmasını sağlar*/
+    clear: both; /* üstündeki float yapısını temizler*/
+}
+footer{
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+}
+/* responsive layout - düzen/yerleşim*/
+@media screen and (max-width:400px){ /* eğer ekran 800px küçükse*/
+    .leftcolumn, .rightcolumn{
+        width: 100px; /*sağ ve sol sütun yan yana değil alt alta olacak*/
+        padding: 0;/*sağ ve sol sütun arasında boşluk olmayacak*/
+    }
+}
+@media screen and (max-width:400px){ /*eğer ekran 800px küçükse*/
+    nav a{
+        float: none;/*menü yan yana değil, alt alta olacak*/
+        width: 100%;
+    }
+}
+nav{
+    overflow: hidden;
+    background-color: #333;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Diğer içeriklerin altında kalmaması için */
+}
+/* Tooltip için stil */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Tooltip içeriği (başlangıçta gizli) */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 220px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 14px;
+
+    /* Pozisyon ayarlamaları */
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    white-space: nowrap; /* Metnin tek satırda kalmasını sağlar */
+}
+
+/* Üzerine gelindiğinde görünür yap */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+address {
+    font-style: normal;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+address a {
+    color: #2b616c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+address a:hover {
+    text-decoration: underline;
+}
+/* Genel buton stili */
+#modeToggle {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#modeToggle:hover {
+    background-color: #666;
+}
+
+/* Dark Mode için ayarlar */
+.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
+
+.dark-mode nav {
+    background-color: #333;
+}
+
+.dark-mode .card {
+    background-color: #444;
+    color: #fff;
+}
+
+.dark-mode footer {
+    background-color: #111;
+}
